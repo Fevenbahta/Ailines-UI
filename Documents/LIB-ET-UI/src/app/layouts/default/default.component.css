@@ -1,0 +1,140 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+mat-drawer-container {
+  height: 85%;
+}
+
+.full-screen-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  background-color: #ffffff; /* Add a background color if needed */
+}
+
+
+
+.sidebarwrapper {
+  /* Other styles for the sidebar */
+  transition: width 0.6s ease-in-out;
+  /* Add more transitions as needed */
+}
+.fixed{
+position: fixed;
+  top: -20px;
+
+width:100%;
+  height: 100%;
+  color:white;
+
+}
+.fixed2{
+padding: -10px;
+ margin: -10px;
+ 
+
+}
+.content-below-header {
+  margin-top: 100px; /* Adjust this margin to match your header height */
+  padding: 2px;
+  overflow-y: auto; /* Enable vertical scrolling for the content */
+  overflow-y: scroll;
+  height: calc(100vh - 80px); /* Adjust height to fill remaining viewport height */
+
+}
+@media (max-width: 1000px) {
+  mat-drawer {
+    width: 0;
+    display: none;
+  }
+
+  .content-below-header {
+    margin-top: 100px; /* Adjust this margin to match your header height */
+    overflow-y: auto; /* Allow scrolling on content */
+  }
+}
+
+.header-closed {
+   position: fixed;
+  top: -20px;
+
+
+  height: 80%;
+  color:white;
+
+}
+.fixed.header-closed {
+
+  width: calc(120% - 80px); 
+   position: fixed;
+  top: -20px;
+
+  color:white;
+
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Style for the sidebar drawer */
+mat-drawer {
+  width: 192px;
+  margin-right: -5%;
+border-radius: 10px;
+
+}
+
+/* Ensures the drawer container takes up the appropriate height */
+mat-drawer-container {
+  height: 100vh; /* Use full viewport height */
+}
+
+/* Fixed styles for the sidebar wrapper */
+.sidebarwrapper {
+  transition: width 0.6s ease-in-out; /* Smooth width transition */
+}
+
+/* Styles for the fixed header */
+.fixed {
+  position: fixed;
+ 
+
+  z-index: 1000; /* High z-index to stay above other elements */
+  width: 100%; /* Full width */
+  height: 30px; /* Set a fixed height for the header */
+  color: white;
+  background: rgba(255, 255, 255, 0); /* Add a background for contrast */
+}
+
+
+
+/* Content area that allows scrolling */
+.content-below-header {
+  margin-top: 50px; /* Adjust margin to match the header height */
+  padding: 10px; /* Set padding for content */
+  height: calc(100vh - 80px); /* Remaining height after header */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1000px) {
+  mat-drawer {
+    width: 0; /* Hide sidebar */
+    display: none; /* Ensure it's not displayed */
+  }
+
+  .content-below-header {
+    margin-top: 80px; /* Adjust margin to match your header height */
+    padding: 10px; /* Consistent padding */
+    overflow-y: auto; /* Enable scrolling */
+  }
+}

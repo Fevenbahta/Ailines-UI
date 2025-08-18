@@ -1,0 +1,107 @@
+
+
+/* Basic Styling for the dropdown button */
+.color{
+  color: rgb(0, 66, 93);
+}
+
+/* Icon spacing */
+.material-icons {
+margin-right: 8px;
+}
+
+
+.fixed-header {
+position:absolute;
+top: 0;
+left: 0;
+width: 90%;
+background-color: #ffffff; /* White background */
+z-index: 100;
+height: 100px;
+box-shadow: none;
+}
+
+.logo-text {
+color:rgb(0, 66, 93); /* Set text color to white */
+text-decoration: none;
+text-size-adjust:inherit;
+font-weight: bold; /* Remove underline */
+font-family:  Times, serif;
+font-size: large;
+}
+.menu-icon,
+.logout-icon {
+font-size: 14px;
+color: white; 
+/* Set the color to white */
+}
+
+.slogan{
+color: rgb(0, 66, 93);
+text-decoration-line:none;
+text-decoration: white;
+align-items: left;
+text-align: right;
+}
+
+
+.logo-img{
+width:6%;
+height: 6%;
+margin-top:1%;
+  }
+  .nav-li{
+color: rgb(0, 66, 93);;
+size: small;
+
+text-decoration-line: none;
+  }
+  .nav-link-text{
+    color: rgb(0, 66, 93);
+    font-weight: bold;
+  }
+  .white{
+    color: rgb(0, 66, 93);
+  }
+  
+
+  .dropdown-btn {
+    background-color: #187397;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+  }
+  
+  /* Basic Styling for the dropdown menu */
+  .dropdown-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: rgb(141, 138, 138);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+ 
+    display: block;
+  }
+  
+  /* Styling for each item in the dropdown */
+  .dropdown-menu li {
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for dropdown items */
+  .dropdown-menu li:hover {
+    background-color: #504a4a;
+  }

@@ -1,0 +1,115 @@
+
+.approval-slip {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #adacac;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.slip-title {
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.cooperative-name, .branch {
+  
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.approval-slip h4 {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.approval-slip p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.approval-slip strong {
+  font-weight: bold;
+}
+
+.date {
+  text-align: right;
+  font-size: 14px;
+  color: #555;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.slip-divider {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+.slip-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #089ab8;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  background-color: #006f8e;
+}
+
+.btn-primary:hover {
+  background-color: #127a97;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .approval-slip, .approval-slip * {
+    visibility: visible;
+  }
+  .approval-slip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .btn {
+    display: none;
+  }
+}
+
+
+
+.slip-title span{ text-align: center; font-size: 16px; font-weight: bold;}
+           
+
+.logo-img { width: 10%; height: 5%; margin-left: 120px; }
+          

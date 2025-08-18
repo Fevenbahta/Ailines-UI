@@ -1,0 +1,75 @@
+<div class="row card">
+    <div class="col-md-12">
+      <div class="card-header mt-5 "><div class="table-container">
+        <div class="table-title p-10">
+            <h3>Airlines Transaction Approval</h3>
+          </div>
+          <div *ngIf="errorMessage" style="color: red; font-weight: bold; margin-bottom: 10px;">
+  {{ errorMessage }}
+</div>
+
+    <table class="custom-table" *ngIf="orders.length > 0; else noDataTemplate">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Order ID</th>
+          <th>Reference No</th>
+          <th>FT No</th>
+          <th>Merchant Code</th>
+          <th>Amount</th>
+          <th>Debited-Account No</th>
+          <th>Debited-Account Name</th>
+          <th>Credited-Account No</th>
+          <th>Credited-Account Name</th>
+          <th>Debited-Account Branch</th>
+          <th>Transfer Date</th>
+          <th>Status</th>
+          <th>Updated By</th>
+          <th >Action</th>
+          <th></th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.referenceNo }}</td>
+          <td>{{ order.traceNumber }}</td>
+          <td>{{ order.merchantCode }}</td>
+<td>{{ order.amount | currency:'':'':'1.2-2' }}</td>
+
+          <td>{{ order.dAccountNo }}</td>
+          <td>{{ order.dAccountName }}</td>
+          <td>{{ order.cAccountNo }}</td>
+          <td>{{ order.cAccountName }}</td>
+          <td>{{ order.dAccountBranch }}</td>
+          <td>{{ order.transferDate | date: 'short' }}</td>
+         <td>
+  {{ (order.responseStatus === 'Faild' || order.responseStatus === 'Pending') ? 'Pending' : order.responseStatus }}
+</td>
+
+          <td>{{ order.updatedBy }}</td>
+          <td class="action-column">
+            <button class="approve-btn" (click)="approveOrder(order)">Approve</button>
+          </td>
+          <td class="action-column"><button class="approve-btn2" (click)="cancelOrder(order)" >Cancel</button>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngFor="let slip of approvalSlips">
+  <app-slip [transaction]="slip"></app-slip>
+</div>   
+  </div>
+ 
+      </div> <ng-template #noDataTemplate>
+          <div class="no-data-found">
+            <h4>No data found to Approve.</h4>
+            <p>Try adjusting your search filters and try again.</p>
+          </div>
+        </ng-template><div class="m-5 p-5"></div><div class="m-5 p-5"></div></div>
+    </div>
+
+  

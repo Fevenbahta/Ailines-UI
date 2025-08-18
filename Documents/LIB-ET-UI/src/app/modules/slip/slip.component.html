@@ -1,0 +1,45 @@
+<div class="approval-slip" #printSection>
+  <div class="approval-slip-wrap" >
+  <a classs="slip-title2" >
+    <img src="/assets/img/LIBLogo2.jpg" class="logo-img" />
+    <span class="slip-title ">LION INTERNATIONAL BANK S.C</span>
+  </a>
+    <p class="date">Date .....: {{ transaction.transferDate | date: 'dd MMMM yyyy \'at\' HH:mm' }}</p>
+                
+    <div class="left-section">  
+      <h6 class="cooperative-name">ACCOUNT TO ACCOUNT TRANSFER</h6>
+   
+      <p class="teller">Inputing Branch .....: {{ transaction.dAccountBranch }}</p>
+      <p class="currency">Currency ...: ETB ETHIOPIAN BIRR </p>
+      
+      <p class="teller">Authorized By .....: {{ transaction.approvedBy }}</p>
+
+      <hr class="slip-divider">
+
+      <div class="slip-section">
+        <p>MR / MRS ......: {{ transaction.dAccountName }}</p>
+        <p>Debit Account No ....... {{ transaction.dAccountNo }}</p>
+        <p>Debited Account Branch ......: {{ transaction.dAccountBranch }}</p>
+        <p>Depositor Phone  ......: {{ transaction.depositorPhone }}</p>
+        <p>PNR ........: {{ transaction.orderId }}</p>
+        <p>Reference No ........: {{ transaction.referenceNo }}</p>
+        <p>FT No ........: {{ transaction.traceNumber }}</p>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="slip-section">
+        <p>Credit Account Owner .......: {{ transaction.cAccountName }}</p>
+        <p>Credit Account Number .....: {{transaction.cAccountNo}}</p>
+        <p>Credit Account Branch .....: 00129</p>
+      
+        <p>Amount ......: {{ transaction.amount | number: '1.2-2' }} ETB</p>
+   
+          <p>Transaction Type .....: Account to Account Transfer</p>
+               </div>
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+<button (click)="printSlip()" class="btn btn-primary">Print</button>

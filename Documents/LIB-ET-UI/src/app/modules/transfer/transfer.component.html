@@ -1,0 +1,153 @@
+<div class="row card">
+    <div class="col-md-12 mb-5 mt-5">
+      <div class="card-header">
+        <div class="step-wrapper">
+    <h2 style="color: rgb(8, 88, 122);" ><b>Airlines Payment</b></h2>
+          <!-- Step Progress -->
+       <div class="progress-line"
+     [ngClass]="{
+       'one-third': step === 1,
+       'two-third': step === 2,
+       'full': step === 3
+     }"></div>
+
+     
+          <!-- Step 1 -->
+          <form *ngIf="step === 1" [formGroup]="searchForm" class="step-form" style="color: rgb(8, 88, 122);" (ngSubmit)="fetchOrder()" >
+            <h2 style="color: rgb(8, 88, 122);"><i class="material-icons" style="color: rgb(8, 88, 122)" >check_circle</i> Check Order</h2>
+     
+    
+            
+            <div class="form-group">
+              <label for="customerCode">PNR Code</label>
+              <input
+                id="customerCode"
+                type="text"
+                formControlName="CustomerCode"
+                placeholder="Enter code"
+                required
+              />
+                <div *ngIf="errorMessage" style="color: rgb(204, 5, 5); font-weight: normal; font-size:16px;margin: 0px 0;">
+  {{ errorMessage }}
+</div>
+            </div>
+
+            <div class="form-actions right">
+              <button type="submit"  [disabled]="searchForm.invalid">
+                Next <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </form>
+  
+          <!-- Step 2 -->
+<form *ngIf="step === 2" [formGroup]="requestForm" (ngSubmit)="submitRequest()" class="step-form">
+  <h2><i class="material-icons" style="color: rgb(8, 88, 122);">check_circle</i> Confirm Payment</h2>
+
+<div class="form-grid">
+  <div class="form-group" *ngFor="let field of [
+    { name: 'customerName', label: 'Customer Name' },
+    { name: 'BillerType', label: 'Biller Type' },
+    { name: 'CustomerCode', label: 'Customer Code' },
+    { name: 'ReferenceNo', label: 'Reference No' },
+    { name: 'PaymentAmount', label: 'Payment Amount' },
+    { name: 'AccountNo', label: 'Enter Account No' }
+  ]">
+    <label>{{ field.label }}</label>
+
+    <!-- Display selectedCustomer for customerName -->
+    <ng-container *ngIf="field.name === 'customerName'; else formField">
+      <input [value]="selectedCustomer" readonly />
+    </ng-container>
+
+    <!-- Other input fields -->
+    <ng-template #formField>
+      <input
+        [formControlName]="field.name"
+        [readonly]="field.name !== 'AccountNo'"
+      />
+    </ng-template>
+
+    <!-- Validation message for Account No -->
+    <div *ngIf="field.name === 'AccountNo'">
+      <div *ngIf="requestForm.get('AccountNo')?.touched && requestForm.get('AccountNo')?.hasError('required')" class="error-message">
+        Account No is required.
+      </div>
+      <div *ngIf="errorMessage" style="color: rgb(204, 5, 5); font-weight: normal; font-size:16px; margin: 0px 0;">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="form-actions space-between">
+    <button type="button" (click)="goToStep(1)">
+      <i class="fas fa-arrow-left"></i> Previous
+    </button>
+    <button type="button" (click)="goToStep3()" [disabled]="!requestForm.get('AccountNo')?.value || !requestForm.get('PaymentAmount')?.value">
+  Next <i class="fas fa-arrow-right"></i>
+</button>
+
+  </div>
+</form>
+<!-- Step 3 -->
+<!-- Step 3 -->
+<form *ngIf="step === 3" [formGroup]="requestForm" class="step-form" (ngSubmit)="submitRequest()">
+  <h2><i class="material-icons" style="color: rgb(8, 88, 122);">check_circle</i> Verify Account</h2>
+
+  <div class="form-group">
+    <label>Account Number</label>
+    <input formControlName="AccountNo"/>
+  </div>
+
+<div *ngIf="accountInfo.accountnumber" class="account-details-box">
+
+  <div class="account-details-grid">
+    <div class="input-group">
+      <label for="fullName"><strong>Full Name:</strong></label>
+      <input id="fullName" type="text" [value]="accountInfo.fulL_NAME" disabled />
+    </div>
+
+    <div class="input-group">
+      <label for="accountNumber"><strong>Account Number:</strong></label>
+      <input id="accountNumber" type="text" [value]="accountInfo.accountnumber" disabled />
+    </div>
+
+    <div class="input-group">
+      <label for="branch"><strong>Branch:</strong></label>
+      <input id="branch" type="text" [value]="accountInfo.branch" disabled />
+    </div>
+
+    <div class="input-group">
+      <label for="telephoneNumber"><strong>Telephone Number:</strong></label>
+      <input id="telephoneNumber" type="text" [value]="accountInfo.telephonenumber" disabled />
+    </div>
+  </div>
+
+  <p class="warning-message">
+    Please check the account number before submitting.
+  </p>
+<div *ngIf="errorMessage" style="color: rgb(204, 5, 5); font-weight: normal; font-size:16px;margin: 0px 0;">
+  {{ errorMessage }}
+</div>
+</div>
+
+
+  <div class="form-actions space-between">
+    <button type="button" (click)="goToStep(2)">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <button type="submit" [disabled]="!accountInfo.fulL_NAME">
+      Confirm <i class="fas fa-check-circle"></i>
+    </button>
+  </div>
+</form>
+
+
+
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

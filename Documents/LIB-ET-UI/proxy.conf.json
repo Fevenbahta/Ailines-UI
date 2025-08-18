@@ -1,0 +1,15 @@
+{
+    "/api": {
+      "target": "https://10.1.22.206:4200/",
+      "secure": false,
+      "changeOrigin": true
+    },
+    "/api2": {
+      "target": "http://10.1.22.198:3000",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+  }
+  
+  }
+  

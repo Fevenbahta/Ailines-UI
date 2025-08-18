@@ -1,0 +1,143 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "Ui": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ui",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/assets/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/ngx-toastr/toastr.css" 
+            ],
+            "scripts": [
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+                "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+                "node_modules/jquery/dist/jquery.min.js",
+                "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+          
+                "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+                "node_modules/bootstrap-notify/bootstrap-notify.js"
+        
+              ]
+              
+            
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "9000kb",
+                  "maximumError": "9mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "ssl": false,
+            "browserTarget": "https://10.1.22.206:4200",
+               "host": "10.1.22.206",
+            "port": 4200
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Ui:build:production"
+            },
+            "development": {
+              "browserTarget": "Ui:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Ui:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+           
+              "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+               "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/assets/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+               "node_modules/ngx-toastr/toastr.css"
+            ],
+            "scripts": [
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+            
+              "node_modules/bootstrap-notify/bootstrap-notify.js"
+           
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "4875e567-bb4c-4894-92d9-7bd36c288d46"
+  }
+}

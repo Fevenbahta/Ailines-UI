@@ -1,0 +1,100 @@
+<div class="row card mb-5">
+  <div class="col-md-12 mb-5">
+    <div class="card-header mt-5">
+      <div class="table-container">
+        <div class="table-title">
+          <h3>Airlines Successful Transaction</h3>
+        </div>
+
+        <!-- Search Filters -->
+        <div class="row my-3">
+          <div class="col-md-2 mt-1">
+            <input
+              type="date"
+              class="form-control search-input"
+              [(ngModel)]="selectedStartDate"
+              placeholder="Start Date"
+            />
+          </div>
+          <div class="col-md-2 mt-1">
+            <input
+              type="date"
+              class="form-control search-input"
+              [(ngModel)]="selectedEndDate"
+              placeholder="End Date"
+            />
+          </div>
+          <div class="col-md-2 mt-1">
+            <input
+              type="text"
+              class="form-control search-input"
+              [(ngModel)]="searchOrderId"
+              placeholder="Search by Order ID"
+            />
+          </div>
+          <div class="col-md-2 mt-1">
+            <input
+              type="text"
+              class="form-control search-input"
+              [(ngModel)]="searchAccountNo"
+              placeholder="Search by D-Account No"
+            />
+          </div>   <div class="col-md-2 ">
+            <button class="btn search-btn" (click)="searchOrders()">Search</button>
+          </div>
+        </div>
+ 
+        <div>      
+</div>
+
+      </div>       <!-- Table Display -->
+  <div *ngIf="filteredOrders.length > 0; else noDataTemplate" class="">
+          <table class="custom-table m-5">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Order ID</th>
+                <th>Reference No</th>
+                <th>Merchant Code</th>
+                <th>Amount</th>
+                <th>Debited-Account No</th>
+                <th>Debited-Account Name</th>
+                <th>Credited-Account No</th>
+                <th>Credited-Account Name</th>
+                <th>Debited-Account Branch</th>
+                <th>Transfer Date</th>
+                <th>Status</th>
+                <th>Updated By</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of filteredOrders; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ order.orderId }}</td>
+                <td>{{ order.referenceNo }}</td>
+                <td>{{ order.merchantCode }}</td>
+              <td>{{ order.amount | currency:'':'':'1.2-2' }}</td>
+
+                <td>{{ order.dAccountNo }}</td>
+                <td>{{ order.dAccountName }}</td>
+                <td>{{ order.cAccountNo }}</td>
+                <td>{{ order.cAccountName }}</td>
+                <td>{{ order.dAccountBranch }}</td>
+                <td>{{ order.transferDate | date: 'short' }}</td>
+                <td>{{ order.responseStatus }}</td>
+                <td>{{ order.updatedBy }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- No Data Template -->
+        <ng-template #noDataTemplate>
+          <div class="no-data-found">
+            <h4>No data found for the selected search criteria.</h4>
+            <p>Try adjusting your search filters and try again.</p>
+          </div>
+        </ng-template>
+    </div>
+    <div class="m-5 p-5"></div>    <div class="m-5 p-5"></div>
+  </div>
+</div>

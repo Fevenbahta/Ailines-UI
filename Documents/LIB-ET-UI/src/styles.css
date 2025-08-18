@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+link{
+    width: 50%;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+         url('/assets/fonts/material-icons/MaterialIcons-Regular.woff') format('woff');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Adjust as needed */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+  .radio-option .mat-radio-outer-circle {
+    border-color: transparent; /* Remove the default border color */
+    background: linear-gradient(to right, rgb(0, 110, 156), rgb(0, 66, 93)); /* Apply the gradient */
+  }
+  
+  /* Targeting the inner circle when selected */
+  .radio-option .mat-radio-inner-circle {
+    background: linear-gradient(to right, rgb(0, 110, 156), rgb(0, 66, 93)); /* Apply gradient to the inner circle */
+  }
+  
+  /* Targeting the checked state */
+  .radio-option.mat-radio-checked .mat-radio-outer-circle {
+    border-color: transparent; /* Keep the outer border transparent when checked */
+  }
+  
+  .radio-option.mat-radio-checked .mat-radio-inner-circle {
+    background: linear-gradient(to right, rgb(0, 110, 156), rgb(0, 66, 93)); /* Keep gradient on the checked state */
+  }

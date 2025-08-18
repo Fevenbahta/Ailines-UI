@@ -1,0 +1,32 @@
+
+
+<div  class="sidebar ">
+    <div class="container-fluid">
+        <div class="logo">
+            <a href="#" class="simple-text">
+           
+             <img  class="logo-img" src="/assets/img/logolib.png"/>
+                  
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+        
+            <ul class="nav">
+                <p class="cardbody user ml-2">welcome {{ user }}</p>               
+         
+
+                <li routerLinkActive="nav-item" *ngFor="let menuItem of menuItems"  class="{{menuItem.class}} ">
+                    <a class="nav-link"  [routerLink]="[menuItem.path]">
+                        <i class="material-icons">{{menuItem.icon}}</i>
+                        <p class="white">{{menuItem.title}}</p>
+                    </a>
+                </li>
+                
+      
+                  
+            </ul>
+        </div>
+    </div>
+</div>
+
+

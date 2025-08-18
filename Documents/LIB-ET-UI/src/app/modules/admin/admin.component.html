@@ -1,0 +1,210 @@
+
+<div class="row ">
+  <div class=" container-fluid card ">
+     
+      <div class="row ml-5 mt-5">
+        <div class="">
+   <h4 class=" card-title  ml-4 mr-4 ">Application Users Admin Form </h4>
+      </div>
+        
+                <div class="col-md-8 ml-5">
+                  <div class="  mb-5">
+                      
+      
+  
+  <div class="card">  
+      <div class=" cardhead">
+          <h4 class=" btn-sm">Reset Password</h4>
+      
+      </div>
+  
+        <form (ngSubmit)="resetPassword()" >
+          
+          <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 form-group">
+                  <mat-form-field>
+                    <!-- Search input field (for filtering users) -->
+                    <input matInput placeholder="" [formControl]="searchControl"  />
+                
+                    <!-- Dropdown for selecting a user -->
+                    <mat-select class="select" placeholder="Select User" name="selectedUserReset" [(ngModel)]="selectedUserReset" required (selectionChange)="onUserselectedReset()">
+                      <mat-option *ngFor="let user of filteredUsers" [value]="user.id">
+                        {{ user.userName }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                
+        
+             
+                       <div class="col-md-2 mt-5 ml-5">
+          <div class="form-field">
+            
+            <input type="text" placeholder="" name="userName" [(ngModel)]="resetUserData.userName" disabled>
+          <label >User Name:</label></div>
+        </div>
+          <div class="col-md-3 mt-5">
+              
+                  <div class="form-field">
+                       <input type="text" placeholder=""  name="role" [(ngModel)]="resetUserData.role" disabled>
+                  <label>Role :</label>
+                 </div>
+            </div>
+        <div  class="col-md-2 mt-5">
+          <button type="submit" class="btn btndelete">Reset </button>
+        </div>
+          
+  </div> <div *ngIf="usedReset" class="  btn-sm btnsave pull-left mb-2">
+           successfull!
+         </div >   </div>
+        </form>
+      </div>
+  
+  <div class="card">
+      <div class="  cardhead">
+          <h4 class="btn-sm">Suspend user</h4>
+      
+      </div>
+        <form (ngSubmit)="removeUser()" >
+          <div class="card-body">
+              <div class="row">
+          
+                    <div class="col-md-3 form-group">
+                      <mat-form-field>
+                        <!-- Search input field (for filtering users) -->
+                        <input matInput placeholder="" [formControl]="searchControlUS"  />
+                    
+                        <!-- Dropdown for selecting a user -->
+                        <mat-select class="select" placeholder="Select User" name="selectedUserDelete" [(ngModel)]="selectedUserDelete" required (selectionChange)="onUserselected()">
+                          <mat-option *ngFor="let user of filteredUnsuspendedUsers" [value]="user.id">
+                            {{ user.userName }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+          <div class="col-md-2 mt-5 ml-5">
+          <div class="form-field">
+               <input type="text" placeholder=""  name="deleteUserName" [(ngModel)]="deleteUserData.userName" disabled>
+          <label>User Name:</label>
+         </div></div>
+  
+      
+          <div class="col-md-2 mt-5">
+          
+                  <div class="form-field">
+                       <input type="text" placeholder=""  name="role" [(ngModel)]="deleteUserData.role" disabled>
+                  <label>Role :</label>
+                 </div>
+            </div>    <div  class="col-md-2 mt-5">
+                  <button type="submit" class="btn btndelete">Suspend</button>
+                </div>
+        </div>
+        
+          
+              </div>  <div *ngIf="userDeleted" class="  btn-sm btnsave pull-left mb-2">
+                   successfull!
+                 </div >
+        </form>
+      </div>
+      <div class="card">
+        <div class="  cardhead">
+            <h4 class="btn-sm">Remove Suspension</h4>
+  
+        </div>
+          <form (ngSubmit)="unsuspendUser()" >
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 form-group">
+              
+           
+                        <mat-form-field>
+                          <!-- Search input field (for filtering users) -->
+                          <input matInput placeholder="" [formControl]="searchControlS"  />
+                      
+                          <!-- Dropdown for selecting a user -->
+                          <mat-select class="select" placeholder="Select User" name="selectedUserUnsuspend" [(ngModel)]="selectedUserUnsuspend" required (selectionChange)="onUserselectedUnsuspended()">
+                            <mat-option *ngFor="let user of filteredSuspendedUsers" [value]="user.id">
+                              {{ user.userName }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+            <div class="col-md-2 mt-5 ml-5">
+            <div class="form-field">
+                 <input type="text" placeholder=""  name="userName" [(ngModel)]="unsuspendUserData.userName" disabled>
+            <label>User Name:</label>
+           </div></div>
+    
+        
+            <div class="col-md-2 mt-5">
+              
+                    <div class="form-field">
+                         <input type="text" placeholder=""  name="role" [(ngModel)]="unsuspendUserData.role" disabled>
+                    <label>Role :</label>
+                   </div>
+              </div>    <div  class="col-md-2 mt-5">
+                    <button type="submit" class="btn btndelete">Save </button>
+                  </div>
+          </div>
+          
+            
+                </div>  <div *ngIf="userUnsuspended" class="  btn-sm btnsave pull-left mb-2">
+                     successfull!
+                   </div >
+          </form>
+        </div>
+  
+  
+        <div class="card">
+          <div class="  cardhead">
+              <h4 class="btn-sm">UnLock</h4>
+    
+          </div>
+            <form (ngSubmit)="unlockUser()" >
+              <div class="card-body">
+                  <div class="row">
+              
+                        <div class="col-md-3 form-group">
+              
+           
+                          <mat-form-field>
+                            <!-- Search input field (for filtering users) -->
+                            <input matInput placeholder="" [formControl]="searchControlL"  />
+                        
+                            <!-- Dropdown for selecting a user -->
+                            <mat-select class="select" placeholder="Select User" name="selectedUserUnsuspend" [(ngModel)]="selectedUserUnlocked" required (selectionChange)="onUserselectedUnlocked()">
+                              <mat-option *ngFor="let user of filteredLockedUsers" [value]="user.id">
+                                {{ user.userName }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+              <div class="col-md-2 mt-5 ml-5">
+              <div class="form-field">
+                   <input type="text" placeholder=""  name="userName" [(ngModel)]="lockUserData.userName" disabled>
+              <label>User Name:</label>
+             </div></div>
+      
+          
+              <div class="col-md-2  mt-5">
+           
+                      <div class="form-field">
+                           <input type="text" placeholder=""  name="role" [(ngModel)]="lockUserData.role" disabled>
+                      <label>Role :</label>
+                     </div>
+                </div>    <div  class="col-md-2  mt-5">
+                      <button type="submit" class="btn btndelete">Save </button>
+                    </div>
+            </div>
+            
+              
+                  </div>  <div *ngIf="userUnlocked" class="  btn-sm btnsave pull-left mb-2">
+                       successfull!
+                     </div >
+            </form>
+          </div>
+  
+  
+    </div></div>
+    </div>

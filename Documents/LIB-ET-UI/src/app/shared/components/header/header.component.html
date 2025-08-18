@@ -1,0 +1,41 @@
+<div class="fixed-header row col-md-12 " style="border-radius: 20%">
+    <nav class="navbar navbar-expand-lg navbar-absolute py-3" style="background: linear-gradient(to left, #f7f8f8, #f9fafa); border-radius: 1%; overflow: hidden; padding-left: 10;">
+      <div class="container-fluid">
+      
+                        <button class="white" mat-icon-button (click)="toggleSideBar()">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+        
+<img  class="logo-img" src="/assets/img/et.png"/>
+              
+        <a class="simple-text mt-4">
+          <span class="ml-2  logo-text"><b>Lion International Bank - Airlines Ticket Payment</b> </span>
+        </a>
+  
+        <div class="collapse navbar-collapse justify-content-end mt-3 mr-5" id="navigation">
+          <ul class="navbar-nav ">
+            <li class="nav-item  "class="color">
+              <div class="col-md-4 ">
+                <button mat-button [matMenuTriggerFor]="userMenu" class="color">
+                  <i class="material-icons color">account_circle</i>
+                  <p  class="mt-2 color">User</p>
+                </button>
+                <mat-menu #userMenu="matMenu">
+           
+                  <button mat-menu-item (click)="changePassword()">
+                    <i class="material-icons color">lock</i>
+                    <span>Change Password</span>
+                  </button>
+                  <button mat-menu-item (click)="logout()">
+                    <i class="material-icons color">logout</i>
+                    <span>Logout</span>
+                  </button>
+                </mat-menu>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  

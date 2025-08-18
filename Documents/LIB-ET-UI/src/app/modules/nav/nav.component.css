@@ -1,0 +1,161 @@
+.btn btn-gray btn-sm{
+  text-decoration: none;
+
+}
+/* Add your custom styles here */
+
+.horizontal-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+ 
+  background: linear-gradient(to left, #0595a8, #16c1e4); 
+
+}
+
+.header {
+  padding: 8px;
+}
+.btn{
+  border:none  }
+.btn-gray {
+  background-color:#fdfdfd;
+
+}
+.btn:hover{
+   box-shadow: black;
+}
+
+
+.mat-dropdown-button {
+  color: #333;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.mat-dropdown-menu {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  padding: 0;
+}
+
+.mat-menu-item {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  font-weight: 200;
+  color: #2d3136;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Add your custom styles here */
+
+.horizontal-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #f8f9fa;
+}
+
+.header {
+  padding: 10px;
+}
+
+
+.mat-dropdown-button {
+  color: #333;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  text-decoration: none;
+}
+
+.mat-dropdown-menu {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  padding: 0;
+}
+
+.mat-menu-item {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  color: #424649;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mat-dropdown-button {
+  color: #585454;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  text-decoration: none;
+  font-weight: normal; /* Add this line to remove bold font-weight */
+}
+.dropdown-icon {
+  margin-left: 6px; 
+  vertical-align: middle; 
+  color: #6d6969;
+/* Push the icon to the right */
+
+}
+.lable{
+  color:#6d6969
+}
+
+
+/* Add more styles as needed */
+
+/* Add more styles as needed */
+/* styles.css or your component-specific style file */
+
+/* Media query for devices with a maximum width of 576px */
+@media (max-width: 576px) {
+.nav-item {
+width:50%
+}
+
+/* Adjust other styles as needed for smaller screens */
+}
+
+/* Media query for devices with a maximum width of 768px */
+@media (max-width: 768px) {
+.nav-item {
+  width:70%
+}
+
+/* Adjust other styles as needed for medium-sized screens */
+}
+
+/* Media query for devices with a maximum width of 992px */
+@media (max-width: 992px) {
+.nav-item {
+  width:80%
+}
+
+}

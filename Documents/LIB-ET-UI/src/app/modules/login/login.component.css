@@ -1,0 +1,220 @@
+.background-container {
+  min-height: 80vh;
+  background-color: #f7f9fc;
+}
+
+.login {
+  max-width: 800px;
+  background: #ffffff;
+}
+
+
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+.login-container h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+button {
+  background-color: #196072;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #196072;
+}
+
+.mat-error {
+  font-size: 14px;
+}
+.cartoon-img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+.color{
+  background-color: rgb(8, 88, 122);
+  color: white;
+
+}
+.textcolor{
+ color: rgb(8, 88, 122);
+
+
+}
+
+.form-control:focus {
+  border-color: rgb(8, 88, 122); /* Change to desired border color */
+  box-shadow: 0 0 5px #196072; /* Optional shadow effect */
+  outline: none; /* Remove the default outline */
+}
+.form-group label {
+  text-align: right; /* Aligns the label text to the right */
+  margin-right: 10px; /* Adds space between label and input */
+  width: 100px; /* Adjust label width uniformly */
+}
+/* Move the label slightly to the left */
+.move-left {
+  display: block;
+  margin-left: -8px;  /* Adjust as needed */
+  text-align: left;  /* Ensures the label aligns to the left */
+}
+
+
+
+
+
+
+
+
+
+.background-container {
+  min-height: 80vh;
+  background-color: #f7f9fc;
+}
+
+.login {
+
+  background: #ffffff;
+}
+
+.intro-text {
+
+
+  color: #196072;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 60;
+  font-weight: 780;
+}
+
+.welcome-text {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.logo-img {
+  max-width: 172px;
+}
+
+.login-container h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+button {
+  background-color: #196072;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #196072;
+}
+
+.mat-error {
+  font-size: 14px;
+}
+.cartoon-img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+.color{
+  background-color: rgb(8, 88, 122);
+  color: white;
+
+}
+.textcolor{
+ color: rgb(8, 88, 122);
+
+
+}
+
+.form-control:focus {
+  border-color: rgb(8, 88, 122); /* Change to desired border color */
+  box-shadow: 0 0 5px #196072; /* Optional shadow effect */
+  outline: none; /* Remove the default outline */
+}
+.form-group label {
+  text-align: right; /* Aligns the label text to the right */
+  margin-right: 10px; /* Adds space between label and input */
+  width: 100px; /* Adjust label width uniformly */
+}
+/* Move the label slightly to the left */
+.move-left {
+  display: block;
+  margin-left: -8px;  /* Adjust as needed */
+  text-align: left;  /* Ensures the label aligns to the left */
+  color:#196072;
+  font-size: 16px;
+  font-weight:630;
+}
+
+.textdanger{
+  font-weight: bold;
+  color: rgb(173, 12, 12);
+}
+
+
+
+
+
+
+
+
+/* Background Image */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/img/lionai1.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center center; /* Adjust focus */
+ background-color:aqua ;
+}
+
+/* Blurred Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(0px); /* Blur effect */
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+}
+
+/* Centering the login form */
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Login Box */
+
+
+.login {
+  background: rgba(255, 255, 255, 0.45); 
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10;
+  width:30%;
+}

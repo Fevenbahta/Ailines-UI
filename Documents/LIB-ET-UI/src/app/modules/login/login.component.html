@@ -1,0 +1,65 @@
+
+
+
+
+<div class="background-container  d-flex justify-content-center align-items-center">
+
+  <div class="overlay"></div> <!-- Blurred Overlay -->
+  <div class="login row shadow-lg rounded p-4">
+    <!-- Left Side: Introduction Text -->
+    <!-- <div class="col-md-6 intro-text p-4 d-flex flex-column justify-content-center align-items-center">
+      <img src="/assets/img/legal1.jpg" alt="Welcome Cartoon" class="cartoon-img mb-3">
+      <p class="welcome-text textcolor">
+        Welcome! Register Collateral Assets Efficiently for Lion International Bank S.C.
+      </p>
+    </div>
+     -->
+
+    <!-- Right Side: Login Form -->
+    <div class="col-md-12 text-center">
+      
+      <a class="simple-text">
+        <img class="logo-img mb-4" src="/assets/img/logolib.png" alt="LIB Logo" />
+      </a>
+            
+<a class="simple-text">
+  <img 
+    src="/assets/img/et.png" 
+    alt="LIB Logo" 
+    style="width: 100px; height: 100px; border-radius: 50%; object-fit: contain; background-color: white;" 
+    class="logo-img mb-4" 
+  />
+</a>
+
+
+      <div class="login-container">
+        <h2 class="mb-3">Login</h2>
+        <h6 class="mb-3 intro-text">Airlines Ticket Payment </h6>
+        <!-- <p class="col-md-12 service-description mb-0  ">
+      Manual Reciept Generator 
+         </p> -->
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group mb-3">
+            <label for="username" class="form-label move-left">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" name="username" required class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label for="password" class="form-label move-left">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" name="password" required class="form-control">
+          </div>
+          
+          <button type="submit" class="btn color w-100">Login</button>
+          <mat-error *ngIf="authService.message" class="textdanger mt-2">
+            {{ authService.message }}
+          </mat-error>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

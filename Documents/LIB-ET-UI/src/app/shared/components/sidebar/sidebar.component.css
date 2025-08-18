@@ -1,0 +1,156 @@
+
+
+
+
+.sidebar .nav {
+  list-style: none;
+
+  margin: 0;
+  margin-right: 0px;
+}
+
+
+.sidebar .nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  margin-right: 0px;
+}
+
+.sidebar .nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.sidebar .nav .nav-item.active .nav-link,
+.sidebar .nav .nav-link.router-link-active {
+  background-color: white;
+  color: rgb(0, 110, 156);
+  font-weight: bold;
+}
+
+
+
+
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Times New Roman', serif;
+  background-color: #f4f6f9;
+}
+
+/* Sidebar Container */
+.sidebar {
+  width: 190px; /* Smaller width */
+  height: 100vh;
+  background: linear-gradient(135deg, #006e9c, #00425d);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  padding: 10px 0; /* Much smaller padding */
+}
+
+.logo-img {
+  width: 50px;  /* Smaller logo */
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Welcome Message */
+.cardbody  {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12px;  /* Smaller font size */
+  font-weight: 600;
+  text-align: left;
+  padding: 10px;
+  margin: 20px;
+ /* Smaller padding */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation List */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;  /* Much smaller padding */
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  font-size: 12px;  /* Smaller font size */
+  border-radius: 6px;
+  margin: 3px 6px;  /* Smaller margin */
+  background-color: transparent;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #00425d;
+  transform: scale(1.03);
+}
+
+.nav-link i {
+  font-size: 16px;  /* Smaller icon size */
+  margin-right: 6px;  /* Smaller margin */
+  border-radius: 0 15px 15px 0;
+  padding: 3px;
+}
+
+.nav-link span {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Active Link */
+.nav-item.active .nav-link,
+.nav-link.router-link-active {
+  background-color: #ffffff;
+  color: #00425d;
+  font-weight: bold;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;  /* Smaller width */
+  }
+
+  .logo-img {
+    width: 40px;  /* Even smaller logo */
+  }
+
+  .nav-link {
+    padding: 4px 8px;  /* Smaller padding */
+    font-size: 11px;  /* Smaller font size */
+  }
+
+  .nav-link i {
+    margin-right: 4px;  /* Even smaller margin */
+  }
+}

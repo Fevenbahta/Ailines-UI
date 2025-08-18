@@ -1,0 +1,131 @@
+/* Container and Card Styling */
+.table-container {
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 30px;
+  background: linear-gradient(135deg, #fdfdfd, #f8f7f7);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
+}
+
+.table-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-title h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color:#006f8e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+ 
+}
+
+/* Search Inputs Styling */
+.search-input {
+  background: #fff;
+  border: 2px solid  rgb(235, 129, 42);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color:  rgb(235, 129, 42);
+  box-shadow: 0 0 10px rgb(235, 129, 42);
+}
+
+/* Search Button Styling */
+.search-btn {
+  background-color:  rgb(235, 129, 42);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 188, 212, 0.2);
+}
+
+.search-btn:hover {
+  background-color: rgb(235, 129, 42);
+  transform: scale(1.05);
+}
+
+/* Table Styling */
+.custom-table {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table thead {
+  background-color: #006f8e;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.custom-table th, .custom-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 12px;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #e6f7ff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-table tbody tr:active {
+  background-color: #b3e0ff;
+}
+
+/* No Data Found Styling */
+.no-data-found {
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.no-data-found h4 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #006f8e;
+}
+
+.no-data-found p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-container {
+    padding: 20px;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .custom-table th, .custom-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

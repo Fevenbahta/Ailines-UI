@@ -1,0 +1,175 @@
+.newcardhead{
+    background-color: rgb(214, 214, 208);
+  }
+  .cardhead{
+    background-color:rgb(217, 222, 224);
+    color:rgba(0, 0, 0, 0.861);
+font-size: small;
+font-size: 10px;
+    
+  }
+  .insufficient-balance{
+    color:red;
+  }
+  
+  .btndelete{
+    background-color: #bed5da;
+    background:linear-gradient(to left, #d6dbdb , #bed5da ) ;
+    color:black;
+ /* Adjust the value to control the roundness */
+    padding: 7px 12px; /* Add padding for better appearance */
+    font-size: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Adjust the font size *//* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: background-color 0.3s;
+  }
+ .car{
+    color:#09b9dd;
+ } 
+  
+  .compact-table th {
+    font-size: 13px;
+    color: black;
+    font-weight: bold; /* Adjust the font size as needed */
+  }
+  .compact-table tr {
+    font-size: 13px; /* Adjust the font size as needed */
+  }
+  
+  .compact-table th, .compact-table td {
+    padding: 4px 8px; 
+  }
+  td ,th{
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .main-body{
+    padding-left: 10%;
+    
+  }
+  .select{
+    border-bottom: 1px solid #ced4da;
+    font-size: 13px;
+  }
+  
+  
+    .form-field {
+      position: relative;
+    }
+    
+    .form-field input:not(:placeholder-shown) + label,
+    .form-field input:focus + label,
+    .form-field mat-form-field input {
+      transform: translateY(-120%) scale(0.8);
+      color: #343536;
+    }
+    
+    .form-field input,
+    .form-field mat-form-field {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      font-size: 12px;
+      padding: 3px 0;
+      width: 80%;
+    }
+    
+    .form-field mat-select {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      font-size: 16px;
+      width: 100%;
+    }
+      .form-field mat-select {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      font-size: 16px;
+      width: 100%;
+    }
+    .form-field mat-select + label {
+  position:inherit;
+  pointer-events: none;
+  right: 30;
+  top: 7px;
+  bottom: 30px;
+  transition: 0.2s ease all;
+  font-size: 15px;
+  color: #747070;
+}
+
+    .form-field label {
+      position: absolute;
+      pointer-events: none;
+      left: 0;
+      top: 7px;
+      transition: 0.2s ease all;
+      font-size: 15px;
+      color: #747070;
+    }
+    .file{
+      color:#fcc034;
+    font-weight: 400;
+    }
+    
+    .select{
+      border-bottom: 1px solid #ced4da;
+      font-size: 14px;
+    }
+    .select2{
+      border: none;
+      border-bottom:1px solid #ced4da;
+      width:60%
+    }
+    
+  .inputserach{
+    width:300px;
+   
+    background: transparent;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat right;
+  }
+  
+  
+  
+  button[type="submit"]:focus,
+  input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #fcc034;
+  border-color:#fcc034;
+  outline: none;
+  }
+  
+  .search{
+  box-shadow: 0 0 3px 0 #bbb;
+  border-color: #76a53b;
+  outline: none;
+  }
+  
+  .loading-overlay{
+    position:fixed;
+    top:80%;
+    bottom:80%;
+    left:10;
+  
+    width:80%;
+    height:30%;
+    background-color:rgba(255,255,255,0.8);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    
+  
+  }
+  .btnsave{
+    background-color: #fb8702;
+    color:rgb(255, 255, 255);
+    
+  }

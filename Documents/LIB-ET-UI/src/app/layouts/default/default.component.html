@@ -1,0 +1,25 @@
+<ng-container *ngIf="!isLoginPage; else loginTemplate">
+  <mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content class="fixed2">
+     <app-header
+  class="fixed"
+  (toggleSideBarForMe)="toggleSideBar($event)"
+  [ngClass]="{ 'header-closed': !sideBarOpen }"
+></app-header>
+
+      <div class="content-below-header">
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</ng-container>
+
+<ng-template #loginTemplate>
+  <div class="full-screen-login">
+    <router-outlet></router-outlet>
+  </div>
+</ng-template>
