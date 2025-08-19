@@ -1,0 +1,28 @@
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="TokenAPI"
+     context="/generate-token">
+    <resource methods="GET" uri-template="/">
+        <inSequence>
+            <!-- Encode username and password in Base64 and set as Authorization header -->
+            <property name="Authorization" expression="fn:concat('Basic ', base64Encode('jgdPJACy5TPGniKsmxahZgjYsfCn9ILI2LZanmk5kukRycGd:nLIqp5u77VqO2TKshWYAOaG33sMiCkGh7g6NOcnLKFsoneFpwnwskDaOMWs4Vgc1'))" scope="transport"/>
+            
+            <log level="full">
+                <property name="Request" value="Sending Token Request"/>
+            </log>
+            
+            <!-- Call Safaricom API using Call mediator instead of Send -->
+            <call>
+                <endpoint>
+                    <http method="GET" uri-template="https://apisandbox.safaricom.et/v1/token/generate?grant_type=client_credentials"/>
+                </endpoint>
+            </call>
+            <log category="INFO" level="full"/>
+        </inSequence>
+        <faultSequence>
+            <log level="full">
+                <property name="Error" value="Error in Token Generation"/>
+            </log>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>

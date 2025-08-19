@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: TokenAPI
+  description: API Definition of TokenAPI
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/generate-token
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

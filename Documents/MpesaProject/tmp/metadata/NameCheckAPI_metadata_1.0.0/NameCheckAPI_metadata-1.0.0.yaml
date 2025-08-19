@@ -1,0 +1,9 @@
+---
+key: "NameCheckAPI-1.0.0"
+name: "NameCheckAPI"
+displayName: "NameCheckAPI"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/transfer"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

@@ -1,0 +1,87 @@
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="TransferToCustomerAPI"
+     context="/namecheck">
+    <resource methods="POST" uri-template="/">
+        <inSequence>
+            <!-- Extract and log incoming payload -->
+            <property name="OriginatorConversationID" expression="json-eval($.OriginatorConversationID)" scope="default" type="STRING"/>
+            <property name="CommandID" expression="json-eval($.CommandID)" scope="default" type="STRING"/>
+            <property name="Amount" expression="json-eval($.Amount)" scope="default" type="STRING"/>
+            <property name="InitiatorUsername" expression="json-eval($.InitiatorUsername)" scope="default" type="STRING"/>
+            <property name="InitiatorPassword" expression="json-eval($.InitiatorPassword)" scope="default" type="STRING"/>
+            <property name="InitiatorShortCode" expression="json-eval($.InitiatorShortCode)" scope="default" type="STRING"/>
+            <property name="ReceiverIdentifierType" expression="json-eval($.ReceiverIdentifierType)" scope="default" type="STRING"/>
+            <property name="Receiver" expression="json-eval($.Receiver)" scope="default" type="STRING"/>
+            <property name="PaymentReason" expression="json-eval($.PaymentReason)" scope="default" type="STRING"/>
+            <property name="SenderBankAccount" expression="json-eval($.ReferenceData[0].Value)" scope="default" type="STRING"/>
+            <property name="SenderName" expression="json-eval($.ReferenceData[1].Value)" scope="default" type="STRING"/>
+
+            <!-- Call the TokenAPI to get the access token -->
+            <property name="Authorization" expression="fn:concat('Basic ', base64Encode('jgdPJACy5TPGniKsmxahZgjYsfCn9ILI2LZanmk5kukRycGd:nLIqp5u77VqO2TKshWYAOaG33sMiCkGh7g6NOcnLKFsoneFpwnwskDaOMWs4Vgc1'))" scope="transport"/>
+            <log level="full"/>
+            <call>
+                <endpoint>
+                    <http method="GET" uri-template="https://apisandbox.safaricom.et/v1/token/generate?grant_type=client_credentials"/>
+                </endpoint>
+            </call>
+            <property name="access_token" expression="json-eval($.access_token)" scope="default" type="STRING"/>
+            <property name="Authorization" expression="fn:concat('Bearer ', get-property('access_token'))" scope="transport"/>
+            <log level="custom">
+                <property name="Token" expression="get-property('access_token')"/>
+            </log>
+
+            <!-- Set the JSON payload for the final API call -->
+            <payloadFactory media-type="json">
+                  <format>{
+                    "OriginatorConversationID": "$1",
+                    "CommandID": "$2",
+                    "Amount": "$3",
+                    "InitiatorUsername": "$4",
+                    "InitiatorPassword": "$5",
+                    "InitiatorShortCode": "$6",
+                    "ReceiverIdentifierType": "$7",
+                    "Receiver": "$8",
+                    "PaymentReason": "$9",
+                    "ReferenceData": [
+                        {
+                            "Key": "SenderBankAccount",
+                            "Value": "$10"
+                        },
+                        {
+                            "Key": "SenderName",
+                            "Value": "$11"
+                        }
+                    ]
+                }</format>
+                   <args>
+                    <arg evaluator="xml" expression="get-property('OriginatorConversationID')"/>
+                    <arg evaluator="xml" expression="get-property('CommandID')"/>
+                    <arg evaluator="xml" expression="get-property('Amount')"/>
+                    <arg evaluator="xml" expression="get-property('InitiatorUsername')"/>
+                    <arg evaluator="xml" expression="get-property('InitiatorPassword')"/>
+                    <arg evaluator="xml" expression="get-property('InitiatorShortCode')"/>
+                    <arg evaluator="xml" expression="get-property('ReceiverIdentifierType')"/>
+                    <arg evaluator="xml" expression="get-property('Receiver')"/>
+                    <arg evaluator="xml" expression="get-property('PaymentReason')"/>
+                    <arg evaluator="xml" expression="get-property('SenderBankAccount')"/>
+                    <arg evaluator="xml" expression="get-property('SenderName')"/>
+                </args>
+            </payloadFactory>
+            <log level="full"/>
+            
+            <call>
+                <endpoint>
+                    <http method="POST" uri-template="https://apisandbox.safaricom.et/bank-to-mpesa/api/v1/transfer"/>
+                </endpoint>
+            </call>
+            <log level="full"/>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+            <log level="full">
+                <property name="Error" value="Error in Name Check API"/>
+            </log>
+            <respond/>
+        </faultSequence>
+    </resource>
+</api>
